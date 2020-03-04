@@ -8,12 +8,25 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserDaoService {
   private static List<User> users = new ArrayList<>();
-  {
+  private static int userCount = 3;
+  static {
     users.add(new User("Chukwudi", 1, new Date()));
     users.add(new User("Obioma", 2, new Date()));
     users.add(new User("Ebuka", 1, new Date()));
 
   }
+  public List<User> findAll(){
+    return users;
+  }
+  public User save(User user){
+    if(user.getId()==0){
+      user.setId(++userCount);
+    }
+    users.add(user);
+    return user;
+
+  }
+
 
 }
 
