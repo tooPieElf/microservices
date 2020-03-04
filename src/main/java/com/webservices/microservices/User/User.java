@@ -3,8 +3,9 @@ package com.webservices.microservices.User;
 import java.util.Date;
 
 public class User {
-  private String name;
+
   private int Id;
+  private String name;
   private Date birthDate;
 
   public User(String name, int id, Date birthDate) {
