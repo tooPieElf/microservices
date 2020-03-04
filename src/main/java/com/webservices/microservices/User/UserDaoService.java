@@ -12,12 +12,13 @@ public class UserDaoService {
   static {
     users.add(new User("Chukwudi", 1, new Date()));
     users.add(new User("Obioma", 2, new Date()));
-    users.add(new User("Ebuka", 1, new Date()));
+    users.add(new User("Ebuka", 3, new Date()));
 
   }
   public List<User> findAll(){
     return users;
   }
+
   public User save(User user){
     if(user.getId()==0){
       user.setId(++userCount);
@@ -25,6 +26,14 @@ public class UserDaoService {
     users.add(user);
     return user;
 
+  }
+  public User findOne(int id){
+    for (User user: users) {
+      if(user.getId()==id){
+        return user;
+      }
+    }
+    return null;
   }
 
 
