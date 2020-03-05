@@ -25,8 +25,8 @@ public class UserDaoService {
     }
     users.add(user);
     return user;
-
   }
+
   public User findOne(int id){
     for (User user: users) {
       if(user.getId()==id){
